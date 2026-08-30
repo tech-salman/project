@@ -49,6 +49,8 @@ body {
 }
 
 .glass-panel {
+  width: min(860px, 92vw);
+  padding: 72px 90px;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--border);
@@ -70,11 +72,13 @@ h1 {
   margin: 16px 0 14px;
   line-height: 1.15;
   font-weight: 700;
+  font-size: clamp(2.4rem, 4vw, 3.5rem);
 }
 
 .subtitle {
   margin: 0;
   color: var(--text-soft);
+  font-size: 1.1rem;
 }
 
 .actions {
@@ -102,45 +106,36 @@ button:hover {
   background: linear-gradient(135deg, rgba(140, 198, 255, 0.48), rgba(24, 106, 255, 0.56));
 }
 
-.desktop-layout .glass-panel {
-  width: min(860px, 92vw);
-  padding: 72px 90px;
+@media (max-width: 1024px) {
+  .glass-panel {
+    width: min(700px, 92vw);
+    padding: 58px 56px;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
 }
 
-.desktop-layout h1 {
-  font-size: clamp(2.4rem, 4vw, 3.5rem);
-}
+@media (max-width: 640px) {
+  .glass-panel {
+    width: min(360px, 94vw);
+    padding: 40px 24px;
+  }
 
-.desktop-layout .subtitle {
-  font-size: 1.1rem;
-}
+  h1 {
+    font-size: clamp(1.7rem, 8vw, 2.1rem);
+  }
 
-.tablet-layout .glass-panel {
-  width: min(700px, 92vw);
-  padding: 58px 56px;
-}
+  .subtitle {
+    font-size: 0.95rem;
+  }
 
-.tablet-layout h1 {
-  font-size: clamp(2rem, 4vw, 2.8rem);
-}
-
-.tablet-layout .subtitle {
-  font-size: 1rem;
-}
-
-.mobile-layout .glass-panel {
-  width: min(360px, 94vw);
-  padding: 40px 24px;
-}
-
-.mobile-layout h1 {
-  font-size: clamp(1.7rem, 8vw, 2.1rem);
-}
-
-.mobile-layout .subtitle {
-  font-size: 0.95rem;
-}
-
-.mobile-layout .actions {
-  flex-direction: column;
+  .actions {
+    flex-direction: column;
+  }
 }
